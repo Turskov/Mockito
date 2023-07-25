@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.services.MovieManager;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class MovieManagerTest {
@@ -24,10 +25,8 @@ public class MovieManagerTest {
         movieManager.save("Отель Белград");
 
         String[] actualLastMovies = movieManager.findLast();
-
-        Assertions.assertEquals(2, actualLastMovies.length);
-        Assertions.assertEquals("Вперед", actualLastMovies[0]);
-        Assertions.assertEquals("Отель Белград", actualLastMovies[1]);
+        String[] expectedLastMovies = {"Вперед", "Отель Белград"};
+        Assertions.assertArrayEquals(expectedLastMovies, actualLastMovies);
     }
 
     @Test
