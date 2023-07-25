@@ -12,8 +12,8 @@ public class MovieManagerTest {
         movieManager.save("Вперед");
         movieManager.save("Отель Белград");
 
-        List<String> actualMovies = movieManager.findAll();
-        Assertions.assertEquals(3, actualMovies.size());
+        String[] actualMovies = movieManager.findAll();
+        Assertions.assertEquals(3, actualMovies.length);
     }
 
     @Test
@@ -23,11 +23,11 @@ public class MovieManagerTest {
         movieManager.save("Вперед");
         movieManager.save("Отель Белград");
 
-        List<String> actualLastMovies = movieManager.findLast();
+        String[] actualLastMovies = movieManager.findLast();
 
-        Assertions.assertEquals(2, actualLastMovies.size());
-        Assertions.assertEquals("Вперед", actualLastMovies.get(0));
-        Assertions.assertEquals("Отель Белград", actualLastMovies.get(1));
+        Assertions.assertEquals(2, actualLastMovies.length);
+        Assertions.assertEquals("Вперед", actualLastMovies[0]);
+        Assertions.assertEquals("Отель Белград", actualLastMovies[1]);
     }
 
     @Test
@@ -41,8 +41,8 @@ public class MovieManagerTest {
         movieManager.save("Человек-невидимка");
         movieManager.save("Тролли. Мировой тур");
 
-        List<String> actualMovies = movieManager.findAll();
+        String[] actualMovies = movieManager.findAll();
 
-        Assertions.assertEquals(5, actualMovies.size());
+        Assertions.assertEquals(5, actualMovies.length);
     }
 }
