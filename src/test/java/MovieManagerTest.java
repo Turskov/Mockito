@@ -43,4 +43,12 @@ public class MovieManagerTest {
 
         Assertions.assertArrayEquals(expectedMovies, actualMovies);
     }
+    @Test
+    public void shouldReturnEmptyArrayWhenNoMoviesSaved() {
+        MovieManager movieManager = new MovieManager(5);
+
+        String[] lastMovies = movieManager.findLast();
+
+        Assertions.assertArrayEquals(new String[]{}, lastMovies);
+    }
 }
